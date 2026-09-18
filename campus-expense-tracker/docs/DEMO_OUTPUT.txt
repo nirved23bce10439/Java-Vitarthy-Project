@@ -1,0 +1,11 @@
+Monthly summary: 2026-09 (INR)
+Income: 8000.00
+Expenses: 3595.75
+Net for month: 4404.25
+CATEGORY            SPENT         BUDGET      REMAINING  STATUS
+FOOD               215.75         200.00         -15.75  OVER BUDGET
+TRANSPORT           80.00         300.00         220.00  WITHIN BUDGET
+STUDY              450.00         500.00          50.00  WITHIN BUDGET
+HOSTEL            2500.00        2500.00           0.00  AT LIMIT
+LEISURE            350.00         500.00         150.00  WITHIN BUDGET
+OTHER                0.00              -              -  NOT SET

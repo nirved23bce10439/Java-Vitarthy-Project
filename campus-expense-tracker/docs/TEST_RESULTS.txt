@@ -1,0 +1,51 @@
+VALIDATION RECORD
+Date: 2026-09-17
+Platform: Windows x64
+
+Verified on the delivered source:
+- Standard run.ps1 build/test/run entry points: passed using Azul Zulu JDK 8u502.
+- run.sh test: passed using Git Bash and Azul Zulu JDK 8u502 on Windows.
+- All 28 tests also passed on Oracle Java 8u501 and Oracle Java 21.0.12.1 runtimes.
+- Sample summary matched independently calculated totals and all budget statuses.
+- Six-page PDF report rendered and visually inspected.
+
+Environment note: the Windows sandbox blocked Java 21 compiler real-path lookups.
+Compilation was first checked through the Java compiler API against Java 8 APIs,
+then verified through the unmodified delivered build scripts with JDK 8u502.
+No sandbox workaround is required in the project source or launch scripts.
+Git Bash needed its normal /usr/bin tools on PATH in this execution environment.
+
+Not locally executed: native Linux/macOS or JDK 17 builds; hosted GitHub Actions.
+The supplied CI workflow targets Windows/Linux with JDK 8, 17, and 21 after publication.
+
+CAPTURED OUTPUT: powershell -NoProfile -ExecutionPolicy Bypass -File ./run.ps1 test
+
+PASS decimal arithmetic is exact
+PASS invalid monetary text rejected
+PASS domain amount validation
+PASS notes reject blanks controls and excessive length
+PASS calendar rejects invalid dates
+PASS empty month returns zero
+PASS month boundaries and income exclusion
+PASS list sorted by date then ID
+PASS budget replacement and month isolation
+PASS deletion preserves next ID across restart
+PASS failed add does not commit or consume ID
+PASS failed delete and budget update preserve state
+PASS snapshot protects source collections
+PASS missing file loads empty
+PASS UTF-8 file round trip and replacement
+PASS corrupt rows and headers rejected without changes
+PASS duplicate IDs and invalid next ID rejected
+PASS duplicate budgets rejected
+PASS file save failure leaves destination intact
+PASS sample totals and budget statuses
+PASS CLI invalid options return status two
+PASS CLI help works without creating data
+PASS interactive create budget summary and restart
+PASS interactive invalid input recovers
+PASS EOF during add leaves no partial transaction
+PASS delete confirmation cancels then deletes
+PASS CLI corrupt file returns one without overwriting
+PASS directory lock rejects simultaneous session
+PASS: 28 tests
